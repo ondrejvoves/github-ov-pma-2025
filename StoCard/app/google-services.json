@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "320686894063",
+    "project_id": "stocard-e5c0d",
+    "storage_bucket": "stocard-e5c0d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320686894063:android:2524f1645e47c51c41641a",
+        "android_client_info": {
+          "package_name": "com.example.stocard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXIbZ8v-cx1t4Xu5gST3MpMQoa9FdkBcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
