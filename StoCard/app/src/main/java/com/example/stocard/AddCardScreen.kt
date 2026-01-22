@@ -27,8 +27,8 @@ import java.util.concurrent.Executors
 
 @Composable
 fun AddCardScreen(
-    initialName: String = "", // NOVÉ: Výchozí jméno pro úpravu
-    initialCode: String? = null, // NOVÉ: Výchozí kód pro úpravu
+    initialName: String = "",
+    initialCode: String? = null,
     onCardSaved: (String, String) -> Unit
 ) {
     val context = LocalContext.current
@@ -56,7 +56,6 @@ fun AddCardScreen(
     }
 
     if (scannedCode == null) {
-        // --- KAMERA (stejná jako předtím) ---
         if (hasCameraPermission) {
             Box(modifier = Modifier.fillMaxSize()) {
                 AndroidView(
@@ -83,7 +82,7 @@ fun AddCardScreen(
             }
         }
     } else {
-        // --- FORMULÁŘ ---
+        // Formulář
         Column(
             modifier = Modifier.fillMaxSize().padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,

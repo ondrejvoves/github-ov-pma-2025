@@ -69,7 +69,6 @@ class MainActivity : ComponentActivity() {
                             initialCode = code,
                             onCardSaved = { newName, newCode ->
                                 viewModel.updateCard(id, newName, newCode)
-                                // Vrátíme se o dva kroky zpět (z editace do seznamu, přeskočíme detail)
                                 navController.popBackStack("main", inclusive = false)
                             }
                         )

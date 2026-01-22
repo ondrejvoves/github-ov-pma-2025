@@ -15,14 +15,14 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 fun LoginScreen(
-    viewModel: CardViewModel, // Teď si obrazovka bere ViewModel
+    viewModel: CardViewModel,
     onLoginSuccess: () -> Unit
 ) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    var isRegistering by remember { mutableStateOf(false) } // Přepínač Login/Registrace
+    var isRegistering by remember { mutableStateOf(false) }
 
-    // Sledujeme chyby (např. špatné heslo)
+    // Sledování chyb
     val errorMessage by viewModel.authError.collectAsState()
 
     Column(
@@ -57,7 +57,7 @@ fun LoginScreen(
             modifier = Modifier.fillMaxWidth()
         )
 
-        // Pokud je chyba, zobrazíme ji červeně
+        // Pokud je chyba
         if (errorMessage != null) {
             Spacer(modifier = Modifier.height(16.dp))
             Text(text = errorMessage!!, color = Color.Red)
@@ -78,10 +78,9 @@ fun LoginScreen(
             Text(if (isRegistering) "Zaregistrovat se" else "Přihlásit se")
         }
 
-        // Tlačítko pro přepínání režimu
         TextButton(onClick = {
             isRegistering = !isRegistering
-            email = "" // Vyčistit pole
+            email = ""
             password = ""
         }) {
             Text(if (isRegistering) "Máte účet? Přihlaste se" else "Nemáte účet? Zaregistrujte se")

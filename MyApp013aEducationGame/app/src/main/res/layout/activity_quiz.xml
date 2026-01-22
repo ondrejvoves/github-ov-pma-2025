@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:padding="24dp"
+    tools:context=".QuizActivity">
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skóre: 0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/accent_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvScore">
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Načítám otázku..."
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_dark"
+            android:gravity="center"
+            android:padding="24dp"
+            android:minLines="3" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOption1"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Možnost A"
+        android:background="@drawable/bg_rounded_button"
+        android:textColor="@color/btn_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOption2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOption2"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Možnost B"
+        android:background="@drawable/bg_rounded_button"
+        android:textColor="@color/btn_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOption3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOption3"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Možnost C"
+        android:background="@drawable/bg_rounded_button"
+        android:textColor="@color/btn_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOption4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOption4"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Možnost D"
+        android:background="@drawable/bg_rounded_button"
+        android:textColor="@color/btn_text_color"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

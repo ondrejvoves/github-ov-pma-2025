@@ -22,8 +22,8 @@ import androidx.compose.ui.graphics.Color
 fun MainScreen(
     cards: List<CardData>,
     onAddCardClick: () -> Unit,
-    onCardClick: (CardData) -> Unit, // Změněno na celý objekt
-    onDeleteClick: (String) -> Unit,  // Nové
+    onCardClick: (CardData) -> Unit,
+    onDeleteClick: (String) -> Unit,
     onLogoutClick: () -> Unit
 ) {
     Scaffold(

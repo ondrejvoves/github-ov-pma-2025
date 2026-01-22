@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-// Definice karty
 data class CardData(val id: String, val name: String, val ean: String)
 
 class CardViewModel : ViewModel() {
@@ -45,20 +44,17 @@ class CardViewModel : ViewModel() {
         _cards.value = emptyList()
     }
 
-    // PŘIDÁVÁNÍ ( Firestore si ID vytvoří sám)
     fun addCard(name: String, code: String) {
         val userId = auth.currentUser?.uid ?: return
         val cardMap = hashMapOf("name" to name, "ean" to code, "created" to System.currentTimeMillis())
         db.collection("users").document(userId).collection("cards").add(cardMap)
     }
 
-    // NOVÉ: MAZÁNÍ
     fun deleteCard(cardId: String) {
         val userId = auth.currentUser?.uid ?: return
         db.collection("users").document(userId).collection("cards").document(cardId).delete()
     }
 
-    // NOVÉ: ÚPRAVA
     fun updateCard(cardId: String, newName: String, newCode: String) {
         val userId = auth.currentUser?.uid ?: return
         val cardMap = hashMapOf("name" to newName, "ean" to newCode)
